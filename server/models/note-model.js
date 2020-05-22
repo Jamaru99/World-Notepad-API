@@ -12,6 +12,7 @@ const noteModel = new mongo.Schema({
     password: {
         type: String,
         required: false,
+        default: null
     },
 }, { versionKey: false });
 
