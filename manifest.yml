@@ -5,8 +5,8 @@ applications:
   name: globalnotepad
   buildpack: sdk-for-nodejs
   command: npm start
-  disk_quota: 1G
-  memory: 96MB
+  disk_quota: 500MB
+  memory: 64MB
   domain: mybluemix.net
   host: global-notepad
   env:
