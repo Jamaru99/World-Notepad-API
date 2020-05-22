@@ -2,6 +2,14 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const mongo = require('mongoose');
+const requireDir = require('require-dir');
+const cors = require('cors');
+
+const connectionString = 'mongodb+srv://iDownward:oie123123@cluster0-pu2nm.mongodb.net/test?retryWrites=true&w=majority';
+
+mongo.connect(connectionString, { useNewUrlParser: true });
+requireDir('./models');
 
 const healthRoutes = require('./routes/health-route');
 const swaggerRoutes = require('./routes/swagger-route');
@@ -9,6 +17,7 @@ const swaggerRoutes = require('./routes/swagger-route');
 const app = express();
 
 // enable parsing of http request body
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
