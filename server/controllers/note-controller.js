@@ -5,7 +5,7 @@ const noteModel = mongo.model("note");
 module.exports = {
 
     async index(req, res){
-        const data = await noteModel.find();
+        const data = await noteModel.find().sort({ '_id': 'desc' });
         return res.json(data);
     },
 
@@ -30,7 +30,9 @@ module.exports = {
     },
 
     async search(req, res){
-        const data = await noteModel.find({ title: { $regex: new RegExp(req.query.title, "i") } });
+        const data = await noteModel
+            .find({ title: { $regex: new RegExp(req.query.title, "i") } })
+            .sort({ '_id': 'desc' });
         return res.json(data);
     }
 
