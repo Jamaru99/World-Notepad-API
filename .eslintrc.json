@@ -8,5 +8,12 @@
     "parserOptions": { 
         "ecmaVersion": 6,
         "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "max-len": ["error", { "code": 130 }]
     }
 }

@@ -1,10 +1,9 @@
-const mongo = require("mongoose");
+const mongo = require('mongoose');
 
-const noteModel = mongo.model("note");
+const noteModel = mongo.model('note');
 
 module.exports = {
-
-    async index(req, res){
+    async listAll(req, res){
         const data = await noteModel.find().sort({ '_id': 'desc' });
         return res.json(data);
     },

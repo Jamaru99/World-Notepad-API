@@ -1,7 +1,7 @@
 {
-  "name": "nodejsexpressapp",
-  "version": "1.0.0",
-  "description": "Start building your next Node.js Express app on IBM Cloud.",
+  "name": "worldnotepad-api",
+  "version": "1.1.0",
+  "description": "API do World Notepad",
   "private": true,
   "engines": {
     "node": "^12.0.0"

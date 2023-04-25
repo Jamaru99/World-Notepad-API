@@ -12,7 +12,6 @@ mongo.connect(connectionString, { useNewUrlParser: true });
 requireDir('./models');
 
 const healthRoutes = require('./routes/health-route');
-const swaggerRoutes = require('./routes/swagger-route');
 const noteRoutes = require('./routes/note-route');
 
 const app = express();
@@ -24,7 +23,6 @@ app.use(bodyParser.json());
 
 // routes and api calls
 app.use('/health', healthRoutes);
-app.use('/swagger', swaggerRoutes);
 app.use('/note', noteRoutes);
 
 // default path to serve up index.html (single page application)
@@ -36,7 +34,6 @@ app.all('', (req, res) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App UI available http://localhost:${port}`);
-  console.log(`Swagger UI available http://localhost:${port}/swagger/api-docs`);
 });
 
 // error handler for unmatched routes or api calls
